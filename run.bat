@@ -12,8 +12,8 @@ set JUPYTER_PORT=8888
 
 REM Parse named parameters (--redis-port N  --jupyter-port N) before the command
 :parse_args
-if "%1"=="--redis-port"   ( set REDIS_PORT=%2   & shift & shift & goto parse_args )
-if "%1"=="--jupyter-port" ( set JUPYTER_PORT=%2 & shift & shift & goto parse_args )
+if "%1"=="--redis-port"   ( set "REDIS_PORT=%2"   & shift & shift & goto parse_args )
+if "%1"=="--jupyter-port" ( set "JUPYTER_PORT=%2" & shift & shift & goto parse_args )
 
 REM Now %1 is the command (or empty)
 if "%1"=="" goto start
